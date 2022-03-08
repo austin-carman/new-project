@@ -1,26 +1,35 @@
-import { Card, Button, Form, Row } from 'react-bootstrap';
+import { Card, Button, Form, Row, Col, FloatingLabel } from 'react-bootstrap';
 
 const Search = () => {
   return (
     <div>
-      <Card border="primary">
+      <Card border="none">
         <Card.Body>
           <Card.Title>Find places to stay on Airbnb</Card.Title>
           <Card.Text>Discover entire homes and private rooms perfect for any trip.</Card.Text>
           <Form>
             <Form.Group>
-              <Form.Control type="text" placeholder="Location" />
+              <FloatingLabel controlId="floatingTextarea" label="Location" className="mb-3">
+                <Form.Control type="text" placeholder="Anywhere" />
+              </FloatingLabel>
             </Form.Group>
+
             <Row>
-              <Form.Group>
-                <Form.Control type="date" placeholder="Check in" />
+              <Form.Group as={Col}>
+                <FloatingLabel controlId="floatingTextarea" label="Check in" className="mb-3">
+                  <Form.Control type="date" />
+                </FloatingLabel>
               </Form.Group>
-              <Form.Group>
-                <Form.Control type="date" placeholder="Check out" />
+
+              <Form.Group as={Col}>
+                <FloatingLabel controlId="floatingTextarea" label="Check out" className="mb-3">
+                  <Form.Control type="date" />
+                </FloatingLabel>
               </Form.Group>
             </Row>
-            <Row>
-              <Form.Group>
+
+            <Row className="mb-3">
+              <Form.Group as={Col}>
                 <Form.Select id="dropdown-basic-button" defaultValue="2">
                   <option href="#/action-1">1</option>
                   <option href="#/action-2">2</option>
@@ -40,7 +49,8 @@ const Search = () => {
                   <option href="#/action-3">16</option>
                 </Form.Select>
               </Form.Group>
-              <Form.Group>
+
+              <Form.Group as={Col}>
                 <Form.Select id="dropdown-basic-button" title="Children">
                   <option href="#/action-1">1</option>
                   <option href="#/action-2">2</option>
@@ -51,9 +61,12 @@ const Search = () => {
                 </Form.Select>
               </Form.Group>
             </Row>
-            <Button variant="primary" size="lg">
-              Search
-            </Button>
+
+            <div className="d-grid gap-2">
+              <Button variant="danger" size="lg">
+                Search
+              </Button>
+            </div>
           </Form>
         </Card.Body>
       </Card>
