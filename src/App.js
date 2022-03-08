@@ -1,9 +1,13 @@
-import Search from './components/Search';
+import Navbar from './components/Navbar';
+import Home from './components/Home/Home';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <Search />
+      <Navbar />
+      <Home />
+      <Footer />
     </div>
   );
 }
